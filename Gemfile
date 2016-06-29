@@ -49,6 +49,7 @@ group :development, :test do
 end
 group :test do
   gem 'database_cleaner'
+  gem 'guard', '~> 2.14'
 end
 
 group :development do
