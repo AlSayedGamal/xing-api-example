@@ -1,7 +1,5 @@
 class SessionController < Devise::OmniauthCallbacksController
 	def xing
-  	Rails.logger.info ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>."
-		Rails.logger.info request.env['omniauth.auth'].to_json
 		@user = User.create_from_xing(request.env['omniauth.auth'])
 		if @user.persisted?
       sign_in_and_redirect @user, :event => :authentication

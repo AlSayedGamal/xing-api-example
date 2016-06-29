@@ -17,10 +17,10 @@ class User < ActiveRecord::Base
   	client = XingApi::Client.new(oauth_token: User.last.token, oauth_token_secret: User.last.secret)
   end
   def xing_id
-  	profile[:id]
+  	profile[:users][0][:id]
   end
   def profile
-  	XingApi::User.me(client: client)[:users][0]
+  	XingApi::User.me(client: client)
   end
   def contacts
   	XingApi::Contact.list(xing_id, {client: client, user_fields:["photo_urls", "display_name","organisation_member"].join(",")})[:contacts][:users]
