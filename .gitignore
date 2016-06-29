@@ -15,8 +15,3 @@
 /log/*
 !/log/.keep
 /tmp
-<<<<<<< HEAD
-/config/initializers/xing.rb
-/config/initializers/devise.rb
-=======
->>>>>>> authenricate and read contacts
