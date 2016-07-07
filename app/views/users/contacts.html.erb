@@ -1,0 +1,20 @@
+<div class="panel panel-default">
+    <div class="panel-heading c-list">
+        <span class="title"><%=@user.first_name%>'s Contacts</span>
+    </div>
+    
+    <ul class="list-group" id="contact-list">
+        <% @contacts.each do |contact| %>
+            <li class="list-group-item">
+                <div class="col-xs-12 col-sm-3">
+                    <%= image_tag(contact[:photo_urls][:large], class: "img-responsive img-circle")%>
+                </div>
+                <div class="col-xs-12 col-sm-9">
+                    <span class="name">Name: <%=contact[:display_name]%></span><br/>
+                    <span class="organization">Organization: <%=contact[:organisation_member] || "NA"%></span>
+                </div>
+                <div class="clearfix"></div>
+            </li>
+        <% end %>
+    </ul>
+</div>
