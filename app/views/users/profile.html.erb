@@ -1,0 +1,25 @@
+<div class="panel panel-default">
+    <div class="panel-heading c-list">
+        <span class="title"><%=@profile[:display_name]%></span>
+    </div>
+    
+    <ul class="list-group" id="contact-list">
+            <li class="list-group-item">
+                <div class="col-xs-12 col-sm-3">
+                    <%= image_tag(@profile[:photo_urls][:large], class: "img-responsive img-circle")%>
+                </div>
+                <div class="col-xs-12 col-sm-9">
+                    <span class="profile">XING Profile: <%=link_to @profile[:display_name], @user.url%></span><br/>
+                    <span class="Schools">Schools:</span>
+                    <ul>
+                    <% @profile[:educational_background][:schools].each do |school| %>
+                        <li>
+                            <%="#{school[:name]} #{school[:subject]} #{school[:degree]}" %>
+                        </li>
+                    <%end%>
+                    </ul>
+                </div>
+                <div class="clearfix"></div>
+            </li>
+    </ul>
+</div>
