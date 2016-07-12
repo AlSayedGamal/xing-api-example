@@ -49,16 +49,15 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'cucumber-rails'
   gem 'factory_girl_rails'
+  gem 'guard', '~> 2.14'
 end
 group :test do
   gem 'database_cleaner'
-  gem 'guard', '~> 2.14'
 end
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
-  gem 'guard', '~> 2.14'
   gem 'guard-rspec', require: false
   gem 'guard-cucumber', require: false
 
