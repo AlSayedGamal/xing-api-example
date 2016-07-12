@@ -3,8 +3,6 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.6'
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -30,6 +28,8 @@ gem 'omniauth', '~> 1.3', '>= 1.3.1'
 gem 'omniauth-xing', '~> 0.1.7'
 # Layout
 gem "twitter-bootstrap-rails"
+#postgres
+gem 'pg'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
@@ -41,11 +41,14 @@ gem "twitter-bootstrap-rails"
 # gem 'capistrano-rails', group: :development
 
 group :development, :test do
+  # Use sqlite3 as the database for Active Record
+  gem 'sqlite3'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
   gem 'rspec-rails'
   gem 'cucumber-rails'
   gem 'factory_girl_rails'
+  gem 'guard', '~> 2.14'
 end
 group :test do
   gem 'database_cleaner'
@@ -54,7 +57,6 @@ end
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
-  gem 'guard', '~> 2.14'
   gem 'guard-rspec', require: false
   gem 'guard-cucumber', require: false
 
@@ -63,3 +65,4 @@ group :development do
   gem 'spring'
 end
 
+gem 'rails_12factor', group: :production

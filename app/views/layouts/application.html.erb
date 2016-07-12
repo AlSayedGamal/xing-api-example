@@ -68,7 +68,7 @@
               <%if current_user %>
                 <li><%= link_to "logout", destroy_user_session_path, method: :delete  %></li>
               <%else%>
-                <li><%= link_to "Sign in with XING", user_omniauth_authorize_path(:xing) %></li>
+                <li><%= link_to "Sign in with XING", user_xing_omniauth_authorize_path %></li>
               <%end%>
             </ul>
           </div><!--/.well -->
